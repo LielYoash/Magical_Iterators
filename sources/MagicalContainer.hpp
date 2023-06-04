@@ -12,8 +12,11 @@ namespace ariel
         vector<int> container;
 
     public:
+        //---------------------------------------Constructors---------------------------------------//
         MagicalContainer();
         ~MagicalContainer();
+        
+        //-------------------------------------------Methods----------------------------------------//
         void addElement(int element);
         void removeElement(int element);
         size_t size() const { return container.size(); };
@@ -26,22 +29,22 @@ namespace ariel
             AscendingIterator(MagicalContainer &container, size_t index);
 
         public:
-            //---------Constructors and Destructors---------//
+            //-----------------------------Constructors and Destructors-----------------------------//
             AscendingIterator(MagicalContainer &container);
             AscendingIterator(const AscendingIterator &other);
             AscendingIterator(AscendingIterator &&other) noexcept;
             ~AscendingIterator();
-            //---------Operators---------//
+            //-------------------------------------Operators----------------------------------------//
             AscendingIterator &operator=(const AscendingIterator &other);
             AscendingIterator &operator=(AscendingIterator &&other) noexcept;
             bool operator==(const AscendingIterator &other) const;
             bool operator!=(const AscendingIterator &other) const;
             bool operator<(const AscendingIterator &other) const;
             bool operator>(const AscendingIterator &other) const;
-            int &operator*() const;
+            int operator*() const;
             AscendingIterator &operator++();
             AscendingIterator operator++(int);
-            //---------Methods---------//
+            //-------------------------------------------Methods------------------------------------//
             AscendingIterator begin() { return AscendingIterator(container, 0); }
             AscendingIterator end() { return AscendingIterator(container, container.size()); }
         };
@@ -54,22 +57,22 @@ namespace ariel
             SideCrossIterator(MagicalContainer &container, size_t index);
 
         public:
-            //---------Constructors and Destructors---------//
+            //-----------------------------Constructors and Destructors-----------------------------//
             SideCrossIterator(MagicalContainer &container);
             SideCrossIterator(const SideCrossIterator &other);
             SideCrossIterator(SideCrossIterator &&other) noexcept;
             ~SideCrossIterator();
-            //---------Operators---------//
+            //-------------------------------------Operators----------------------------------------//
             SideCrossIterator &operator=(const SideCrossIterator &other);
             SideCrossIterator &operator=(SideCrossIterator &&other) noexcept;
             bool operator==(const SideCrossIterator &other) const;
             bool operator!=(const SideCrossIterator &other) const;
             bool operator<(const SideCrossIterator &other) const;
             bool operator>(const SideCrossIterator &other) const;
-            int &operator*() const;
+            int operator*() const;
             SideCrossIterator &operator++();
             SideCrossIterator operator++(int);
-            //---------Methods---------//
+            //-------------------------------------------Methods------------------------------------//
             SideCrossIterator begin() { return SideCrossIterator(container, 0); }
             SideCrossIterator end() { return SideCrossIterator(container, container.size()); }
         };
@@ -82,22 +85,22 @@ namespace ariel
             PrimeIterator(MagicalContainer &container, size_t index);
 
         public:
-            //---------Constructors and Destructors---------//
+            //-----------------------------Constructors and Destructors-----------------------------//
             PrimeIterator(MagicalContainer &container);
             PrimeIterator(const PrimeIterator &other);
             PrimeIterator(PrimeIterator &&other) noexcept;
             ~PrimeIterator();
-            //---------Operators---------//
+            //-------------------------------------Operators----------------------------------------//
             PrimeIterator &operator=(const PrimeIterator &other);
             PrimeIterator &operator=(PrimeIterator &&other) noexcept;
             bool operator==(const PrimeIterator &other) const;
             bool operator!=(const PrimeIterator &other) const;
             bool operator<(const PrimeIterator &other) const;
             bool operator>(const PrimeIterator &other) const;
-            int &operator*() const;
+            int operator*() const;
             PrimeIterator &operator++();
             PrimeIterator operator++(int);
-            //---------Methods---------//
+            //-------------------------------------------Methods------------------------------------//
             PrimeIterator begin() { return PrimeIterator(container, 0); }
             PrimeIterator end() { return PrimeIterator(container, container.size()); }
         };
